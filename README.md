@@ -108,3 +108,4 @@ src/
   Lighthouse performance matters, dynamic-`import()`-ing GSAP and the
   Firebase Firestore module (loading them only after first interaction) is
   the next optimization to reach for.
+# MacroTracK-WaitList
