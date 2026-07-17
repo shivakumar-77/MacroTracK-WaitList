@@ -2,6 +2,7 @@ import { Instagram, Linkedin } from "lucide-react";
 import { FOUNDER } from "@/data/content";
 import { Reveal } from "@/components/shared/reveal";
 import { Card } from "@/components/ui/card";
+import Image from "next/image"; 
 
 function getInitials(name: string) {
   return name
@@ -18,9 +19,12 @@ export function FounderSection() {
       <div className="mx-auto max-w-xl px-5 sm:px-8">
         <Reveal>
           <Card className="flex flex-col items-center gap-4 p-10 text-center">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-xl font-bold text-white shadow-[0_12px_28px_-10px_rgb(var(--primary)/0.5)]">
-              {getInitials(FOUNDER.name)}
-            </div>
+            <Image
+                src="/images/Founder.png"
+                alt="Shiva Kumar"
+                width={80}
+                height={80}
+                className="h-20 w-20 rounded-full object-cover border-4 border-primary shadow-[0_12px_28px_-10px_rgb(var(--primary)/0.5)]"/>
             <div>
               <h3 className="text-lg font-semibold text-foreground">{FOUNDER.name}</h3>
               <p className="text-sm text-primary">{FOUNDER.role}</p>
