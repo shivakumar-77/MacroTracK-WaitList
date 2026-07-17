@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* MacroTrack brand palette — RGB channels so Tailwind's alpha
+     modifiers (e.g. bg-card/40) work directly off these tokens. */
+  --primary: 46 125 50; /* #2E7D32 */
+  --secondary: 67 160 71; /* #43A047 */
+  --accent: 102 187 106; /* #66BB6A */
+  --background: 15 17 21; /* #0F1115 */
+  --card: 24 26 32; /* #181A20 */
+  --foreground: 255 255 255; /* #FFFFFF */
+  --muted-foreground: 176 190 197; /* #B0BEC5 */
+  --success: 0 230 118; /* #00E676 */
+  --border: 255 255 255;
+}
+
+* {
+  border-color: rgb(var(--border) / 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.35);
+  color: rgb(var(--foreground));
+}
+
+/* Slim, on-brand scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--card));
+  border-radius: 999px;
+  border: 2px solid rgb(var(--background));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--primary) / 0.6);
+}
+
+@layer utilities {
+  /* Core glassmorphism surface used across cards, nav, and panels */
+  .glass {
+    background: rgb(var(--card) / 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgb(var(--border) / 0.08);
+  }
+
+  .glass-strong {
+    background: rgb(var(--card) / 0.8);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgb(var(--border) / 0.1);
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      100deg,
+      rgb(var(--accent)) 0%,
+      rgb(var(--secondary)) 45%,
+      rgb(var(--success)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-radial-fade {
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgb(var(--primary) / 0.16),
+      transparent 60%
+    );
+  }
+
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(
+      90deg,
+      rgb(var(--muted-foreground)) 0%,
+      rgb(var(--foreground)) 50%,
+      rgb(var(--muted-foreground)) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
