@@ -5,6 +5,23 @@ platform. Built with Next.js 15 (App Router), TypeScript, Tailwind CSS,
 shadcn/ui-style components on Radix primitives, Framer Motion, GSAP
 (ScrollTrigger), Firebase Firestore, React Hook Form, and Zod.
 
+## Design system
+
+The UI was redesigned to a light theme matching the MacroTrack mobile app.
+All colors live as CSS variables in `src/app/globals.css` and are mapped
+into Tailwind in `tailwind.config.ts`, so every component pulls from the
+same source of truth:
+
+| Token | Value | Used for |
+|---|---|---|
+| `background` | `#F8FAFC` | Page background |
+| `card` | `#FFFFFF` | Cards, inputs, the floating navbar's glass base |
+| `primary` / `accent` / `success` | `#22C55E` | Buttons, icons, focus rings, checkmarks — one green used consistently |
+| `secondary` | `#6366F1` | Purple accents in "Why MacroTrack" and background glows |
+| `foreground` | `#111827` | Body text |
+| `muted-foreground` | `#6B7280` | Secondary text |
+| `border` | `#E5E7EB` | Card borders, dividers |
+
 ## Stack & how it's used
 
 | Tool | What it's doing here |
@@ -108,4 +125,3 @@ src/
   Lighthouse performance matters, dynamic-`import()`-ing GSAP and the
   Firebase Firestore module (loading them only after first interaction) is
   the next optimization to reach for.
-# MacroTracK-WaitList

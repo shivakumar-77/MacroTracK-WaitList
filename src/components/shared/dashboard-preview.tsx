@@ -16,7 +16,7 @@ function CalorieRing({ percent }: { percent: number }) {
   const offset = circumference - (percent / 100) * circumference;
   return (
     <svg viewBox="0 0 100 100" className="h-28 w-28 -rotate-90">
-      <circle cx="50" cy="50" r={radius} strokeWidth="8" className="fill-none stroke-card" />
+      <circle cx="50" cy="50" r={radius} strokeWidth="8" className="fill-none stroke-border" />
       <circle
         cx="50"
         cy="50"
@@ -37,7 +37,7 @@ function MacroBar({ label, value, percent, tone }: { label: string; value: strin
   return (
     <div className="flex items-center gap-2">
       <span className="w-14 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">{label}</span>
-      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-card">
+      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-border">
         <div className={cn("h-full rounded-full", toneClass)} style={{ width: `${percent}%` }} />
       </div>
       <span className="w-10 text-right text-[10px] text-muted-foreground">{value}</span>
@@ -82,7 +82,7 @@ function DashboardScreen() {
                 key={i}
                 className={cn(
                   "h-3 w-2 rounded-b-full rounded-t-sm",
-                  i < 5 ? "bg-accent" : "bg-card"
+                  i < 5 ? "bg-accent" : "bg-border"
                 )}
               />
             ))}
@@ -155,7 +155,7 @@ function WorkoutScreen() {
             <span
               className={cn(
                 "flex h-5 w-5 items-center justify-center rounded-full",
-                ex.done ? "bg-success text-background" : "border border-border/20 text-transparent"
+                ex.done ? "bg-success text-white" : "border border-border text-transparent"
               )}
             >
               <Check className="h-3 w-3" strokeWidth={3} />

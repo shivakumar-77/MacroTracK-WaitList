@@ -17,7 +17,7 @@ Label.displayName = LabelPrimitive.Root.displayName;
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p role="alert" className="mt-1.5 text-xs text-red-400">
+    <p role="alert" className="mt-1.5 text-xs text-red-600">
       {message}
     </p>
   );

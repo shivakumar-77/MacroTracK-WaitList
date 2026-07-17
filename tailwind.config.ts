@@ -25,9 +25,10 @@ const config: Config = {
         "3xl": "2rem",
       },
       boxShadow: {
-        soft: "0 8px 30px -12px rgb(0 0 0 / 0.45)",
-        "glow-primary": "0 0 40px -8px rgb(var(--accent) / 0.45)",
-        "glow-success": "0 0 40px -8px rgb(var(--success) / 0.4)",
+        soft: "0 10px 30px -12px rgb(17 24 39 / 0.10)",
+        card: "0 4px 16px -4px rgb(17 24 39 / 0.06)",
+        "glow-primary": "0 10px 24px -8px rgb(var(--primary) / 0.45)",
+        "glow-success": "0 10px 24px -8px rgb(var(--success) / 0.4)",
       },
       backgroundImage: {
         "grid-pattern":

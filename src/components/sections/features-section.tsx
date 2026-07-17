@@ -35,8 +35,8 @@ export function FeaturesSection() {
             const Icon = ICONS[feature.icon];
             return (
               <RevealItem key={feature.title}>
-                <Card className="group relative h-full overflow-hidden p-6 transition-all duration-300 ease-premium hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-glow-primary">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 text-accent transition-transform duration-300 ease-premium group-hover:scale-110">
+                <Card className="group relative h-full overflow-hidden p-6 transition-all duration-300 ease-premium hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-18px_rgb(var(--primary)/0.35)]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-primary transition-transform duration-300 ease-premium group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-5 text-base font-semibold text-foreground">{feature.title}</h3>

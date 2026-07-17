@@ -4,18 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "focus-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all duration-300 ease-premium disabled:pointer-events-none disabled:opacity-50",
+  "focus-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-all duration-300 ease-premium disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-primary via-secondary to-accent text-white shadow-glow-primary hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0",
+          "bg-gradient-to-r from-green-400 to-green-600 text-white shadow-glow-primary hover:scale-[1.04] hover:shadow-[0_14px_30px_-8px_rgb(var(--primary)/0.55)] active:scale-100",
         secondary:
-          "glass text-foreground hover:bg-card/80 hover:-translate-y-0.5 active:translate-y-0",
+          "border border-border bg-white text-foreground shadow-card hover:scale-[1.03] hover:bg-gray-50 active:scale-100",
         outline:
-          "border border-border/20 bg-transparent text-foreground hover:bg-card/60 hover:-translate-y-0.5",
-        ghost: "bg-transparent text-muted-foreground hover:text-foreground hover:bg-card/40",
-        link: "bg-transparent text-accent underline-offset-4 hover:underline p-0",
+          "border border-border bg-transparent text-foreground hover:scale-[1.03] hover:bg-gray-50 active:scale-100",
+        ghost: "bg-transparent text-muted-foreground hover:text-foreground hover:bg-gray-100",
+        link: "bg-transparent text-primary underline-offset-4 hover:underline p-0",
       },
       size: {
         default: "h-12 px-6 text-sm",

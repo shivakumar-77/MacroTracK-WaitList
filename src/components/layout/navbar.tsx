@@ -31,72 +31,74 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ease-premium ${
-        scrolled ? "glass-strong shadow-soft" : "bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="focus-ring rounded-lg">
-          <Logo />
-        </a>
-
-        <div className="hidden items-center gap-8 md:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="focus-ring rounded text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="hidden md:block">
-          <Button asChild size="sm">
-            <a href="#waitlist">Join Waitlist</a>
-          </Button>
-        </div>
-
-        <button
-          type="button"
-          className="focus-ring rounded-lg p-2 text-foreground md:hidden"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((v) => !v)}
+    <header className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6 sm:px-8">
+      <div className="mx-auto max-w-5xl">
+        <nav
+          className={`glass flex h-16 items-center justify-between rounded-full px-5 transition-shadow duration-300 ease-premium sm:px-6 ${
+            scrolled ? "shadow-soft" : ""
+          }`}
         >
-          {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </nav>
+          <a href="#top" className="focus-ring rounded-lg">
+            <Logo />
+          </a>
 
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-strong overflow-hidden md:hidden"
+          <div className="hidden items-center gap-8 md:flex">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="focus-ring rounded text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="hidden md:block">
+            <Button asChild size="sm">
+              <a href="#waitlist">Join Waitlist</a>
+            </Button>
+          </div>
+
+          <button
+            type="button"
+            className="focus-ring rounded-lg p-2 text-foreground md:hidden"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
           >
-            <div className="flex flex-col gap-1 px-5 pb-6 pt-2">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="focus-ring rounded-lg px-2 py-3 text-sm text-muted-foreground hover:text-foreground"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button asChild className="mt-2 w-full" onClick={() => setMenuOpen(false)}>
-                <a href="#waitlist">Join Waitlist</a>
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </nav>
+
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: "auto" }}
+              exit={{ opacity: 0, y: -8, height: 0 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="glass-strong mt-2 overflow-hidden rounded-3xl shadow-soft md:hidden"
+            >
+              <div className="flex flex-col gap-1 px-5 pb-5 pt-3">
+                {NAV_LINKS.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="focus-ring rounded-lg px-2 py-3 text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <Button asChild className="mt-2 w-full" onClick={() => setMenuOpen(false)}>
+                  <a href="#waitlist">Join Waitlist</a>
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 }

@@ -48,28 +48,34 @@ export const FEATURES: Feature[] = [
 ];
 
 export type TimelineItem = {
+  icon: "Layers" | "Sparkles" | "LayoutDashboard" | "Repeat" | "ShieldCheck";
   title: string;
   description: string;
 };
 
 export const WHY_MACROTRACK: TimelineItem[] = [
   {
+    icon: "Layers",
     title: "Everything in one app",
     description: "Calories, workouts, water, supplements, and progress photos — no more switching between five different trackers.",
   },
   {
+    icon: "Sparkles",
     title: "AI insights that matter",
     description: "Your AI Coach reads your actual logs and flags what's working and what's quietly stalling your progress.",
   },
   {
+    icon: "LayoutDashboard",
     title: "A dashboard you'll enjoy opening",
     description: "Clean, fast, and designed to make checking in feel good instead of feeling like a chore.",
   },
   {
+    icon: "Repeat",
     title: "Built for consistency",
     description: "Small nudges and streaks that keep you logging on the days you don't feel like it — no guilt, just momentum.",
   },
   {
+    icon: "ShieldCheck",
     title: "Privacy focused",
     description: "Your data trains your own insights, not a public feed. Nothing is shared unless you choose to share it.",
   },
@@ -121,9 +127,9 @@ export const FAQ: FaqItem[] = [
  * than inventing a fake identity or fake social URLs.
  */
 export const FOUNDER = {
-  name: "Shiva Kumar",
+  name: "Your Name Here",
   role: "Founder & CEO",
-  bio: "Building MacroTrack to make AI-powered nutrition and fitness coaching accessible to everyone.",
-  linkedinUrl: "https://www.linkedin.com/in/shiva-kumar-152820253?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-  instagramUrl: "https://www.instagram.com/macrotrack.fit?igsh=MWs1a2w0Z3l4Mmw5dw%3D%3D&utm_source=qr",
+  bio: "Building the future of AI-powered fitness, one log at a time.",
+  linkedinUrl: "#",
+  instagramUrl: "#",
 };

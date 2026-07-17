@@ -3,21 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* ===== MacroTrack App Theme ===== */
-
-  --primary: 34 197 94; /* Green */
-  --secondary: 99 102 241; /* Purple */
-  --accent: 16 185 129; /* Emerald */
-
+  /* MacroTrack brand palette — RGB channels so Tailwind's alpha
+     modifiers (e.g. bg-card/40) work directly off these tokens. */
+  --primary: 34 197 94; /* #22C55E — green */
+  --secondary: 99 102 241; /* #6366F1 — purple/indigo */
+  --accent: 34 197 94; /* same as primary: every "accent" usage in the app is this green */
   --background: 248 250 252; /* #F8FAFC */
-  --card: 255 255 255; /* White */
-
+  --card: 255 255 255; /* #FFFFFF */
   --foreground: 17 24 39; /* #111827 */
   --muted-foreground: 107 114 128; /* #6B7280 */
-
-  --success: 34 197 94;
-
-  --border: 226 232 240; /* #E2E8F0 */
+  --success: 34 197 94; /* same green — one accent color, used consistently */
+  --border: 229 231 235; /* #E5E7EB — thin gray border */
 }
 
 * {
@@ -29,7 +25,7 @@ html {
 }
 
 body {
-  background: rgb(var(--background));
+  background-color: rgb(var(--background));
   color: rgb(var(--foreground));
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,51 +37,45 @@ body {
   color: rgb(var(--foreground));
 }
 
-/* Scrollbar */
-
+/* Slim, on-brand scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
-  background: rgb(243 244 246);
+  background: rgb(var(--background));
 }
-
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--primary));
+  background: rgb(var(--border));
   border-radius: 999px;
+  border: 2px solid rgb(var(--background));
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--secondary));
+  background: rgb(var(--primary) / 0.5);
 }
 
 @layer utilities {
-  /* Glass Cards */
-
+  /* Floating white glass surface — the navbar, and any other
+     "frosted" chrome that should sit above content. */
   .glass {
-    background: rgb(255 255 255 / 0.75);
+    background: rgb(var(--card) / 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgb(var(--border));
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgb(var(--border) / 0.8);
   }
 
   .glass-strong {
-    background: rgb(255 255 255 / 0.92);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: rgb(var(--card) / 0.92);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
     border: 1px solid rgb(var(--border));
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
   }
 
   .text-gradient {
     background: linear-gradient(
-      90deg,
-      rgb(var(--primary)),
-      rgb(var(--secondary))
+      100deg,
+      rgb(var(--primary)) 0%,
+      rgb(var(--secondary)) 100%
     );
-
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -93,36 +83,32 @@ body {
 
   .bg-radial-fade {
     background: radial-gradient(
-      circle at top,
-      rgb(var(--primary) / 0.18),
-      transparent 65%
+      circle at 50% 0%,
+      rgb(var(--primary) / 0.08),
+      transparent 60%
     );
   }
 
   .focus-ring {
     outline: none;
   }
-
   .focus-ring:focus-visible {
     outline: 2px solid rgb(var(--primary));
     outline-offset: 3px;
-    border-radius: 8px;
+    border-radius: 4px;
   }
 
   .shimmer-text {
     background: linear-gradient(
       90deg,
-      rgb(var(--muted-foreground)),
-      rgb(var(--foreground)),
-      rgb(var(--muted-foreground))
+      rgb(var(--muted-foreground)) 0%,
+      rgb(var(--foreground)) 50%,
+      rgb(var(--muted-foreground)) 100%
     );
-
     background-size: 200% 100%;
-
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-
     animation: shimmer 3s linear infinite;
   }
 }
@@ -131,7 +117,6 @@ body {
   html {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {

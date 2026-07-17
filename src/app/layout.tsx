@@ -39,14 +39,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0F1115",
+  themeColor: "#F8FAFC",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         {/* Loaded via <link> rather than next/font so the build has no
             external network dependency — swap to next/font/google any

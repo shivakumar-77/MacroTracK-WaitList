@@ -50,7 +50,7 @@ export function WaitlistSection() {
   return (
     <section id="waitlist" className="relative overflow-hidden py-24 sm:py-32">
       <GradientBlob variant="primary" className="left-[-10%] bottom-0 h-96 w-96" />
-      <GradientBlob variant="accent" className="right-[-10%] top-0 h-80 w-80" animationClass="animate-float" />
+      <GradientBlob variant="secondary" className="right-[-10%] top-0 h-80 w-80" animationClass="animate-float" />
 
       <div className="relative mx-auto max-w-xl px-5 sm:px-8">
         <Reveal className="text-center">
@@ -63,12 +63,12 @@ export function WaitlistSection() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
-          <Card className="overflow-hidden p-6 sm:p-8">
+          <Card className="overflow-hidden p-8 sm:p-10">
             {!isFirebaseConfigured() && (
-              <p className="mb-6 rounded-xl border border-yellow-500/20 bg-yellow-500/5 px-4 py-3 text-xs text-yellow-200/80">
+              <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
                 Firebase isn’t configured yet — add your project credentials to{" "}
-                <code className="rounded bg-black/30 px-1 py-0.5">.env.local</code> to enable real
-                submissions. See <code className="rounded bg-black/30 px-1 py-0.5">.env.local.example</code>.
+                <code className="rounded bg-amber-100 px-1 py-0.5">.env.local</code> to enable real
+                submissions. See <code className="rounded bg-amber-100 px-1 py-0.5">.env.local.example</code>.
               </p>
             )}
 
@@ -85,7 +85,7 @@ export function WaitlistSection() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.15, type: "spring", stiffness: 260, damping: 18 }}
-                    className="flex h-16 w-16 items-center justify-center rounded-full bg-success/15 text-success"
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-primary"
                   >
                     <Check className="h-8 w-8" strokeWidth={2.5} />
                   </motion.span>
@@ -164,10 +164,10 @@ export function WaitlistSection() {
                               aria-checked={field.value === platform.value}
                               onClick={() => field.onChange(platform.value)}
                               className={cn(
-                                "focus-ring flex h-12 items-center justify-center gap-2 rounded-xl border text-sm font-medium transition-all duration-200",
+                                "focus-ring flex h-14 items-center justify-center gap-2 rounded-xl border text-sm font-medium transition-all duration-200",
                                 field.value === platform.value
-                                  ? "border-accent/50 bg-accent/10 text-accent"
-                                  : "border-border/15 bg-card/60 text-muted-foreground hover:text-foreground"
+                                  ? "border-primary/40 bg-green-50 text-primary"
+                                  : "border-border bg-white text-muted-foreground hover:bg-gray-50 hover:text-foreground"
                               )}
                             >
                               <Smartphone className="h-4 w-4" />
@@ -198,7 +198,7 @@ export function WaitlistSection() {
                   </div>
 
                   {submitState === "error" && errorMessage && (
-                    <p role="alert" className="rounded-xl bg-red-500/10 px-4 py-3 text-xs text-red-300">
+                    <p role="alert" className="rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-xs text-red-600">
                       {errorMessage}
                     </p>
                   )}

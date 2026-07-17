@@ -29,7 +29,7 @@ export function ProductPreviewSection() {
 
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
-      <GradientBlob variant="success" className="left-1/2 top-0 h-96 w-96 -translate-x-1/2" />
+      <GradientBlob variant="secondary" className="left-1/2 top-0 h-96 w-96 -translate-x-1/2" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
@@ -75,7 +75,7 @@ export function ProductPreviewSection() {
               <span
                 className={cn(
                   "h-1.5 rounded-full transition-all duration-300 ease-premium",
-                  i === index ? "w-6 bg-accent" : "w-1.5 bg-border/30 group-hover:bg-border/50"
+                  i === index ? "w-6 bg-accent" : "w-1.5 bg-border group-hover:bg-gray-300"
                 )}
               />
               <span

@@ -9,6 +9,7 @@ type Particle = {
   vx: number;
   vy: number;
   opacity: number;
+  color: string;
 };
 
 /**
@@ -36,6 +37,7 @@ export function ParticleField({ className }: { className?: string }) {
     let animationFrame = 0;
 
     const PARTICLE_COUNT = 46;
+    const COLORS = ["34, 197, 94", "99, 102, 241"]; // primary green, secondary purple
 
     function resize() {
       const parent = canvas!.parentElement;
@@ -50,13 +52,14 @@ export function ParticleField({ className }: { className?: string }) {
     }
 
     function seed() {
-      particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+      particles = Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
         x: Math.random() * width,
         y: Math.random() * height,
         radius: Math.random() * 1.4 + 0.4,
         vx: (Math.random() - 0.5) * 0.15,
         vy: (Math.random() - 0.5) * 0.15,
-        opacity: Math.random() * 0.5 + 0.15,
+        opacity: Math.random() * 0.3 + 0.08,
+        color: COLORS[i % COLORS.length],
       }));
     }
 
@@ -72,7 +75,7 @@ export function ParticleField({ className }: { className?: string }) {
 
         ctx!.beginPath();
         ctx!.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(102, 187, 106, ${p.opacity})`;
+        ctx!.fillStyle = `rgba(${p.color}, ${p.opacity})`;
         ctx!.fill();
       }
       animationFrame = requestAnimationFrame(draw);

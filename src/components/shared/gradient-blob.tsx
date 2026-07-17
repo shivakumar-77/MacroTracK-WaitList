@@ -2,14 +2,15 @@ import { cn } from "@/lib/utils";
 
 type GradientBlobProps = {
   className?: string;
-  variant?: "primary" | "accent" | "success";
+  variant?: "primary" | "secondary" | "accent" | "success";
   animationClass?: string;
 };
 
 const VARIANT_GRADIENT: Record<NonNullable<GradientBlobProps["variant"]>, string> = {
-  primary: "from-primary/40 via-secondary/25 to-transparent",
-  accent: "from-accent/35 via-primary/20 to-transparent",
-  success: "from-success/25 via-secondary/20 to-transparent",
+  primary: "from-primary/30 to-transparent",
+  secondary: "from-secondary/25 to-transparent",
+  accent: "from-primary/30 to-transparent",
+  success: "from-primary/25 to-transparent",
 };
 
 /**

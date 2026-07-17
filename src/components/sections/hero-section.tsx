@@ -35,24 +35,24 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pb-24 pt-36 sm:pt-44"
+      className="relative overflow-hidden pb-28 pt-40 sm:pb-36 sm:pt-52"
     >
       <div className="bg-radial-fade pointer-events-none absolute inset-0" aria-hidden="true" />
       <GradientBlob variant="primary" className="left-[-10%] top-10 h-80 w-80" />
       <GradientBlob
-        variant="accent"
-        className="right-[-8%] top-40 h-96 w-96"
+        variant="secondary"
+        className="right-[-8%] top-32 h-96 w-96"
         animationClass="animate-float"
       />
       <ParticleField className="pointer-events-none absolute inset-0 -z-0 opacity-70" />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-5 sm:px-8 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-20 px-5 sm:px-8 lg:grid-cols-2">
         <div className="text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-accent"
+            className="inline-flex items-center gap-2 rounded-full border border-green-100 bg-green-50 px-4 py-1.5 text-xs font-medium text-green-700"
           >
             <Sparkles className="h-3.5 w-3.5" />
             AI-Powered Fitness Platform
@@ -62,7 +62,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            className="mt-7 text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
           >
             Transform Your Fitness <br className="hidden sm:block" />
             with <span className="text-gradient">AI</span>
@@ -72,7 +72,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
+            className="mx-auto mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
           >
             Track calories, workouts, nutrition, and progress — all powered
             by intelligent AI that actually pays attention to your data.
@@ -82,7 +82,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
+            className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
           >
             <Button asChild size="lg">
               <a href="#waitlist">Join the Waitlist</a>
@@ -95,22 +95,23 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        <motion.div
-          ref={containerRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          style={{ transformStyle: "preserve-3d" }}
-          className="relative mx-auto flex justify-center"
-        >
-          <motion.div style={{ transform }}>
-            <PhoneMockup>
-              <DashboardPreview screen="dashboard" />
-            </PhoneMockup>
+        <div className="relative mx-auto flex justify-center animate-float-slow">
+          <motion.div
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <motion.div style={{ transform }}>
+              <PhoneMockup>
+                <DashboardPreview screen="dashboard" />
+              </PhoneMockup>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
