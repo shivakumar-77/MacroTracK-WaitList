@@ -127,9 +127,9 @@ export const FAQ: FaqItem[] = [
  * than inventing a fake identity or fake social URLs.
  */
 export const FOUNDER = {
-  name: "Your Name Here",
+  name: "Shiva Kumar",
   role: "Founder & CEO",
-  bio: "Building the future of AI-powered fitness, one log at a time.",
-  linkedinUrl: "#",
-  instagramUrl: "#",
+  bio: "Building MacroTrack to make AI-powered nutrition and fitness coaching accessible to everyone.",
+  linkedinUrl: "https://www.linkedin.com/in/shiva-kumar-152820253?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  instagramUrl: "https://www.instagram.com/macrotrack.fit?igsh=MWs1a2w0Z3l4Mmw5dw%3D%3D&utm_source=qr",
 };
