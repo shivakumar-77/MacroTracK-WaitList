@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 :root {
-  /* MacroTrack brand palette — RGB channels so Tailwind's alpha
-     modifiers (e.g. bg-card/40) work directly off these tokens. */
-  --primary: 46 125 50; /* #2E7D32 */
-  --secondary: 67 160 71; /* #43A047 */
-  --accent: 102 187 106; /* #66BB6A */
-  --background: 15 17 21; /* #0F1115 */
-  --card: 24 26 32; /* #181A20 */
-  --foreground: 255 255 255; /* #FFFFFF */
-  --muted-foreground: 176 190 197; /* #B0BEC5 */
-  --success: 0 230 118; /* #00E676 */
-  --border: 255 255 255;
+  /* ===== MacroTrack App Theme ===== */
+
+  --primary: 34 197 94; /* Green */
+  --secondary: 99 102 241; /* Purple */
+  --accent: 16 185 129; /* Emerald */
+
+  --background: 248 250 252; /* #F8FAFC */
+  --card: 255 255 255; /* White */
+
+  --foreground: 17 24 39; /* #111827 */
+  --muted-foreground: 107 114 128; /* #6B7280 */
+
+  --success: 34 197 94;
+
+  --border: 226 232 240; /* #E2E8F0 */
 }
 
 * {
-  border-color: rgb(var(--border) / 0.08);
+  border-color: rgb(var(--border));
 }
 
 html {
@@ -25,7 +29,7 @@ html {
 }
 
 body {
-  background-color: rgb(var(--background));
+  background: rgb(var(--background));
   color: rgb(var(--foreground));
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,49 +37,55 @@ body {
 }
 
 ::selection {
-  background: rgb(var(--accent) / 0.35);
+  background: rgb(var(--primary) / 0.2);
   color: rgb(var(--foreground));
 }
 
-/* Slim, on-brand scrollbar */
+/* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
-  background: rgb(var(--background));
+  background: rgb(243 244 246);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--card));
+  background: rgb(var(--primary));
   border-radius: 999px;
-  border: 2px solid rgb(var(--background));
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(var(--primary) / 0.6);
+  background: rgb(var(--secondary));
 }
 
 @layer utilities {
-  /* Core glassmorphism surface used across cards, nav, and panels */
+  /* Glass Cards */
+
   .glass {
-    background: rgb(var(--card) / 0.55);
+    background: rgb(255 255 255 / 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgb(var(--border) / 0.08);
+    border: 1px solid rgb(var(--border));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   }
 
   .glass-strong {
-    background: rgb(var(--card) / 0.8);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border: 1px solid rgb(var(--border) / 0.1);
+    background: rgb(255 255 255 / 0.92);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgb(var(--border));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
   }
 
   .text-gradient {
     background: linear-gradient(
-      100deg,
-      rgb(var(--accent)) 0%,
-      rgb(var(--secondary)) 45%,
-      rgb(var(--success)) 100%
+      90deg,
+      rgb(var(--primary)),
+      rgb(var(--secondary))
     );
+
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -83,32 +93,36 @@ body {
 
   .bg-radial-fade {
     background: radial-gradient(
-      circle at 50% 0%,
-      rgb(var(--primary) / 0.16),
-      transparent 60%
+      circle at top,
+      rgb(var(--primary) / 0.18),
+      transparent 65%
     );
   }
 
   .focus-ring {
     outline: none;
   }
+
   .focus-ring:focus-visible {
-    outline: 2px solid rgb(var(--accent));
+    outline: 2px solid rgb(var(--primary));
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 
   .shimmer-text {
     background: linear-gradient(
       90deg,
-      rgb(var(--muted-foreground)) 0%,
-      rgb(var(--foreground)) 50%,
-      rgb(var(--muted-foreground)) 100%
+      rgb(var(--muted-foreground)),
+      rgb(var(--foreground)),
+      rgb(var(--muted-foreground))
     );
+
     background-size: 200% 100%;
+
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+
     animation: shimmer 3s linear infinite;
   }
 }
@@ -117,6 +131,7 @@ body {
   html {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
