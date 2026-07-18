@@ -16,12 +16,11 @@ export function FounderSection() {
                 aria-hidden="true"
               />
               <Image
-                src="/Founder.png"
+                src="/images/Founder.png"
                 alt={FOUNDER.name}
                 width={96}
                 height={96}
-                className="relative h-24 w-24 rounded-full object-cover shadow-[0_12px_28px_-10px_rgb(var(--primary)/0.5)]"
-              />
+                className="relative h-24 w-24 rounded-full object-cover shadow-[0_12px_28px_-10px_rgb(var(--primary)/0.5)]"/>
             </div>
             <div>
               <h3 className="text-xl font-semibold tracking-tight text-foreground">{FOUNDER.name}</h3>
