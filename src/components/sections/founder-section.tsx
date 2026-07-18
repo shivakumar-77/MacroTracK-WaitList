@@ -16,7 +16,7 @@ export function FounderSection() {
                 aria-hidden="true"
               />
               <Image
-                src="/founder.jpg"
+                src="/Founder.png"
                 alt={FOUNDER.name}
                 width={96}
                 height={96}

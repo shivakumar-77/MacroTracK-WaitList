@@ -2,15 +2,15 @@ import { Github, Instagram, Linkedin } from "lucide-react";
 import { Logo } from "@/components/shared/logo";
 
 const SOCIALS = [
-  { label: "Instagram", href: "#", icon: Instagram },
-  { label: "LinkedIn", href: "#", icon: Linkedin },
+  { label: "Instagram", href: "https://www.instagram.com/macrotrack.fit?utm_source=qr", icon: Instagram },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/shiva-kumar-152820253?utm_source=share_via&utm_content=profile&utm_medium=member_ios", icon: Linkedin },
   { label: "GitHub", href: "#", icon: Github },
 ];
 
 const LINKS = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "Contact", href: "mailto:hello@macrotrack.app" },
+  { label: "Contact", href: "mailto:macrotrack.in@gmail.com" },
 ];
 
 export function Footer() {

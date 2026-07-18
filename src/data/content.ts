@@ -131,6 +131,6 @@ export const FOUNDER = {
   name: "Shiva Kumar",
   role: "Founder & CEO",
   bio: "Building the fitness app I always wished existed—one place to track workouts, nutrition, progress, and AI coaching.",
-  linkedinUrl: "#",
-  instagramUrl: "#",
+  linkedinUrl: "https://www.linkedin.com/in/shiva-kumar-152820253?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  instagramUrl: "https://www.instagram.com/macrotrack.fit?utm_source=qr",
 };
