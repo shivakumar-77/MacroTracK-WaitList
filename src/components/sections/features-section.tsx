@@ -28,19 +28,19 @@ export function FeaturesSection() {
         </Reveal>
 
         <RevealGroup
-          className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
           staggerDelay={0.08}
         >
           {FEATURES.map((feature) => {
             const Icon = ICONS[feature.icon];
             return (
               <RevealItem key={feature.title}>
-                <Card className="group relative h-full overflow-hidden p-6 transition-all duration-300 ease-premium hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-18px_rgb(var(--primary)/0.35)]">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-primary transition-transform duration-300 ease-premium group-hover:scale-110">
+                <Card className="group relative h-full overflow-hidden p-7 transition-all duration-500 ease-premium hover:-translate-y-2 hover:border-primary/25 hover:shadow-[0_24px_48px_-20px_rgb(var(--primary)/0.22)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-50 text-primary transition-transform duration-500 ease-premium group-hover:scale-110 group-hover:rotate-3">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-5 text-base font-semibold text-foreground">{feature.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <h3 className="mt-6 text-base font-semibold text-foreground">{feature.title}</h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
                     {feature.description}
                   </p>
                 </Card>

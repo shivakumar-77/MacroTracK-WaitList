@@ -5,12 +5,12 @@ import { Footer } from "@/components/layout/footer";
 
 const SITE_URL = "https://macrotrack.app";
 const SITE_DESCRIPTION =
-  "MacroTrack is an AI-powered fitness platform for calorie tracking, workouts, water, macros, body progress, and personalized coaching — all in one app. Join the waitlist for early access.";
+  "The all-in-one AI fitness app to track workouts, calories, nutrition, water, body measurements, and AI-powered progress.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "MacroTrack — Transform Your Fitness with AI",
+    default: "MacroTrack – AI Fitness Tracking App",
     template: "%s · MacroTrack",
   },
   description: SITE_DESCRIPTION,
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: "MacroTrack — Transform Your Fitness with AI",
+    title: "MacroTrack – AI Fitness Tracking App",
     description: SITE_DESCRIPTION,
     siteName: "MacroTrack",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MacroTrack — Transform Your Fitness with AI",
+    title: "MacroTrack – AI Fitness Tracking App",
     description: SITE_DESCRIPTION,
   },
   robots: { index: true, follow: true },

@@ -55,7 +55,7 @@ export function WaitlistSection() {
       <div className="relative mx-auto max-w-xl px-5 sm:px-8">
         <Reveal className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Be Among the First
+            Join the Early Access Waitlist
           </h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Join the waitlist for early access, founder pricing, and a say in what we build next.
@@ -63,7 +63,7 @@ export function WaitlistSection() {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-10">
-          <Card className="overflow-hidden p-8 sm:p-10">
+          <Card className="overflow-hidden p-8 sm:p-11">
             {!isFirebaseConfigured() && (
               <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
                 Firebase isn’t configured yet — add your project credentials to{" "}
@@ -81,18 +81,33 @@ export function WaitlistSection() {
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col items-center py-8 text-center"
                 >
-                  <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.15, type: "spring", stiffness: 260, damping: 18 }}
-                    className="flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-primary"
+                  <span className="relative flex h-16 w-16 items-center justify-center">
+                    <span className="absolute inset-0 animate-pulse-ring rounded-full border-2 border-primary/60" aria-hidden="true" />
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.15, type: "spring", stiffness: 260, damping: 18 }}
+                      className="relative flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-primary"
+                    >
+                      <Check className="h-8 w-8" strokeWidth={2.5} />
+                    </motion.span>
+                  </span>
+                  <motion.h3
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.4 }}
+                    className="mt-5 text-xl font-semibold text-foreground"
                   >
-                    <Check className="h-8 w-8" strokeWidth={2.5} />
-                  </motion.span>
-                  <h3 className="mt-5 text-xl font-semibold text-foreground">You’re on the list!</h3>
-                  <p className="mt-2 max-w-xs text-sm text-muted-foreground">
+                    You’re on the list!
+                  </motion.h3>
+                  <motion.p
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45, duration: 0.4 }}
+                    className="mt-2 max-w-xs text-sm text-muted-foreground"
+                  >
                     We’ll email you the moment early access opens. Thanks for being here first.
-                  </p>
+                  </motion.p>
                 </motion.div>
               ) : (
                 <motion.form
@@ -101,7 +116,7 @@ export function WaitlistSection() {
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit(onSubmit)}
                   noValidate
-                  className="space-y-5"
+                  className="space-y-6"
                 >
                   <div>
                     <Label htmlFor="name">Name</Label>
@@ -206,10 +221,10 @@ export function WaitlistSection() {
                   <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="h-4 w-4 animate-spin" /> Joining…
+                        <Loader2 className="h-4 w-4 animate-spin" /> Getting you in…
                       </>
                     ) : (
-                      "Join Waitlist"
+                      "Get Early Access"
                     )}
                   </Button>
                 </motion.form>

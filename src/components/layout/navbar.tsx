@@ -34,15 +34,15 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6 sm:px-8">
       <div className="mx-auto max-w-5xl">
         <nav
-          className={`glass flex h-16 items-center justify-between rounded-full px-5 transition-shadow duration-300 ease-premium sm:px-6 ${
-            scrolled ? "shadow-soft" : ""
+          className={`flex h-16 items-center justify-between rounded-full px-6 transition-all duration-500 ease-premium sm:px-7 ${
+            scrolled ? "glass-strong shadow-soft" : "glass"
           }`}
         >
           <a href="#top" className="focus-ring rounded-lg">
             <Logo />
           </a>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-10 md:flex">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -56,7 +56,7 @@ export function Navbar() {
 
           <div className="hidden md:block">
             <Button asChild size="sm">
-              <a href="#waitlist">Join Waitlist</a>
+              <a href="#waitlist">Get Early Access</a>
             </Button>
           </div>
 
@@ -92,7 +92,7 @@ export function Navbar() {
                   </a>
                 ))}
                 <Button asChild className="mt-2 w-full" onClick={() => setMenuOpen(false)}>
-                  <a href="#waitlist">Join Waitlist</a>
+                  <a href="#waitlist">Get Early Access</a>
                 </Button>
               </div>
             </motion.div>

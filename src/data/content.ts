@@ -122,14 +122,15 @@ export const FAQ: FaqItem[] = [
 ];
 
 /**
- * Placeholder founder details. Replace with the real name, bio, and
- * profile links before shipping — intentionally left generic rather
- * than inventing a fake identity or fake social URLs.
+ * Founder details. Name inferred from the "Made with ❤️ by Shiva Kumar"
+ * footer credit — update directly if that's not accurate, and swap in
+ * real LinkedIn/Instagram URLs when ready (left as "#" placeholders
+ * rather than fabricated links).
  */
 export const FOUNDER = {
   name: "Shiva Kumar",
   role: "Founder & CEO",
-  bio: "Building MacroTrack to make AI-powered nutrition and fitness coaching accessible to everyone.",
-  linkedinUrl: "https://www.linkedin.com/in/shiva-kumar-152820253?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-  instagramUrl: "https://www.instagram.com/macrotrack.fit?igsh=MWs1a2w0Z3l4Mmw5dw%3D%3D&utm_source=qr",
+  bio: "Building the fitness app I always wished existed—one place to track workouts, nutrition, progress, and AI coaching.",
+  linkedinUrl: "#",
+  instagramUrl: "#",
 };

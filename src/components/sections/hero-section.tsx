@@ -62,35 +62,43 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-7 text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            className="mt-8 text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl"
           >
-            Transform Your Fitness <br className="hidden sm:block" />
-            with <span className="text-gradient">AI</span>
+            The AI Fitness App <br className="hidden sm:block" />
+            That Actually <span className="text-gradient">Understands</span> You
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
+            className="mx-auto mt-8 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
           >
-            Track calories, workouts, nutrition, and progress — all powered
-            by intelligent AI that actually pays attention to your data.
+            Track workouts, calories, nutrition, water, body progress, and
+            receive personalized AI coaching — all in one beautifully
+            designed app.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
+            className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
           >
             <Button asChild size="lg">
-              <a href="#waitlist">Join the Waitlist</a>
+              <a href="#waitlist">Get Early Access</a>
             </Button>
-            <Button variant="secondary" size="lg" disabled className="gap-2">
+            <Button
+              variant="secondary"
+              size="lg"
+              disabled
+              className="gap-2 border-dashed text-muted-foreground shadow-none hover:scale-100 hover:bg-white disabled:opacity-100"
+            >
               <PlayCircle className="h-5 w-5" />
               Watch Demo
-              <span className="text-muted-foreground">(Coming Soon)</span>
+              <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-muted-foreground">
+                Coming Soon
+              </span>
             </Button>
           </motion.div>
         </div>
